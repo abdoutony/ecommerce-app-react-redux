@@ -1,0 +1,11 @@
+.bg-none {
+  background: none !important;
+}
+.icon-right {
+  position: relative;
+  left: 15px;
+}
+.icon-left {
+  position: relative;
+  left: 15px;
+}
