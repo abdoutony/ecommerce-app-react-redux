@@ -1,8 +1,12 @@
-import { Container, Col, Row, Image, Button, Card } from "react-bootstrap";
-import { ProductItem } from "../utils/ProductItem";
-import { imagesMockList } from "../../data/images";
-export const FeaturedProducts = () => {
-  const images = imagesMockList;
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { Container, Row, Col } from "react-bootstrap";
+import "@splidejs/splide/dist/css/splide.min.css";
+import FeaturedItem from "./featuredItem";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import "./featured.css";
+import { useState, useEffect } from "react";
+const Featured = (props) => {
   return (
     <Container fluid className="pt-5">
       <Container>
@@ -12,65 +16,41 @@ export const FeaturedProducts = () => {
           </Col>
         </Row>
 
-        <Col className="text-right">
-          <a
-            class="btn btn-primary mb-3 mr-1"
-            href="#carouselExampleIndicators2"
-            role="button"
-            data-slide="prev"
-          >
-            <i class="fa fa-arrow-left"></i>
-          </a>
-          <a
-            class="btn btn-primary mb-3 "
-            href="#carouselExampleIndicators2"
-            role="button"
-            data-slide="next"
-          >
-            <i class="fa fa-arrow-right"></i>
-          </a>
-        </Col>
-
-        <Row>
-          <Col md="12">
-            <div
-              id="carouselExampleIndicators2"
-              class="carousel slide"
-              data-ride="carousel"
-            >
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <div class="row">
-                    <div class="col-md-4 mb-3">
-                      <ProductItem imageLink={images[0].url} />
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <ProductItem imageLink={images[1].url} />
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <ProductItem imageLink={images[2].url} />
-                    </div>
-                  </div>
-                </div>
-
-                <div class="carousel-item">
-                  <div class="row">
-                    <div class="col-md-4 mb-3">
-                      <ProductItem imageLink={images[3].url} />
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <ProductItem imageLink={images[3].url} />
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <ProductItem imageLink={images[3].url} />
-                    </div>
-                  </div>
-                </div>
-              </div>
+        <Splide
+          className="mt-5"
+          renderControls={() => (
+            <div class="splide__arrows">
+              <button
+                class="splide__arrow splide__arrow--prev bg-none"
+                style={{ transform: "scale(-1,1)" }}
+              >
+                <ArrowBackIosIcon className="icon-left" />
+                <ArrowBackIosIcon />
+              </button>
+              <button class="splide__arrow splide__arrow--next bg-none">
+                <ArrowForwardIosIcon className="icon-right" />
+                <ArrowForwardIosIcon />
+              </button>
             </div>
-          </Col>
-        </Row>
+          )}
+          options={{
+            type: "loop",
+            perPage: 3,
+            perMove: 1,
+            arrows: 2,
+          }}
+        >
+          {props.featured.map((el, index) => {
+            return (
+              <SplideSlide key={index}>
+                <FeaturedItem element={el} />
+              </SplideSlide>
+            );
+          })}
+        </Splide>
       </Container>
     </Container>
   );
 };
+
+export default Featured;

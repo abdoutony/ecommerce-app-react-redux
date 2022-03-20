@@ -1,7 +1,12 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 .App {
   font-family: sans-serif;
   text-align: center;
+}
+
+.text-blue {
+  color: #000e1c !important;
+}
+
+.bg-blue {
+  background-color: #000e1c !important;
 }

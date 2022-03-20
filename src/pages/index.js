@@ -1,6 +1,6 @@
 import { NavigationMenu } from "../components/navbar";
 import { HeroSection } from "../components/hero/index";
-import Featured from "../components/featuredProducts/featured";
+import Featured from "../components/featuredProducts";
 import { About } from "../components/about";
 import { Banner } from "../components/banner";
 import { NewsLetter } from "../components/newsLetter";
@@ -19,18 +19,18 @@ const MainPage = (props) => {
       <NavigationMenu />
       <HeroSection />
       <About />
-      <Featured products={props.products} />
+      <Featured featured={props.featured} />
       <Banner />
-      <NewArrival />
-      <NewsLetter />
+      <NewArrival  newArrival={props.newArrival} />
+    
       <Footer />
     </>
   );
 };
 const mapStateToProps = (state) => {
-  const { products } = state.ProductReducer;
-  return { products };
+  const { products, featured, newArrival } = state.ProductReducer;
+  return { products, featured, newArrival };
 };
 export default connect(mapStateToProps, {
-  fetchProducts
+  fetchProducts,
 })(MainPage);

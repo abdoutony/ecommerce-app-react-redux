@@ -1,17 +1,23 @@
 const initialState = {
-  products: []
+  products: [],
+  featured: [],
+  newArrival: [],
 };
 
-export default (state = initialState, action) => {
+const ProductReducer = (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
     case "FETCH_PRODUCTS":
       return {
         ...state,
-        products: payload.data
+        products: payload.products,
+        featured: payload.featured,
+        newArrival: payload.newArrival,
       };
 
     default:
       return state;
   }
 };
+
+export default ProductReducer;

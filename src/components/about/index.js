@@ -1,4 +1,5 @@
-import { Container, Col, Row, Image, Button } from "react-bootstrap";
+import { Container, Col, Row, Image } from "react-bootstrap";
+import { Button } from "@mui/material";
 import heroImg from "../../multimedia/images/herobg.png";
 export const About = () => {
   return (
@@ -11,7 +12,7 @@ export const About = () => {
           <Col md="6">
             <Col className="d-flex justify-content-start">
               <Col>
-                <h1>About us</h1>
+                <h1 className="text-blue">About us</h1>
                 <p>
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry's
@@ -26,7 +27,15 @@ export const About = () => {
                   printer took a galley of type and scrambled it to make a type
                   specimen book. It has survived not only five centuries
                 </p>
-                <Button variant="warning">Visite our Blog</Button>
+                <Button
+                  href="https://abdelkaderlounis207.gatsbyjs.io"
+                  variant="contained"
+                  color="warning"
+                  className="text-white"
+                  target="_blank"
+                >
+                  Visite our Blog
+                </Button>
               </Col>
             </Col>
           </Col>
