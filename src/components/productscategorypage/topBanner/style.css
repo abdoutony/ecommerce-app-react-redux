@@ -1,0 +1,7 @@
+.topBannerContainer {
+  background-image: url("../../../multimedia/images/banner-top-man.jpg");
+  width: 100%;
+  height: 300px;
+  background-repeat: no-repeat;
+  background-position: center;
+}

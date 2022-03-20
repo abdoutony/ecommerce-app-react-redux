@@ -1,0 +1,25 @@
+.filterByContainer {
+  border: 1px solid #ccc;
+  padding: 0 0 15px 0;
+}
+.filterByHeader {
+  border-bottom: 1px solid #ccc;
+  padding: 15px;
+  font-weight: bold;
+}
+
+.filterByContent {
+  padding: 15px;
+}
+
+.filterBySize,
+.filterByColor {
+  padding: 0 15px;
+}
+
+.inputColor {
+  border: none;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+}

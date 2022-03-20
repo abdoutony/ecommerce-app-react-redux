@@ -1,0 +1,18 @@
+.homeBoxContainer {
+  border: 1px solid #ccc;
+  padding: 0;
+}
+.homeBoxHeader {
+  border-bottom: 1px solid #ccc;
+  padding: 15px;
+  font-weight: bold;
+}
+.homeBoxItem {
+  padding: 15px 15px 0 15px;
+}
+
+.itemContent {
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 15px;
+}

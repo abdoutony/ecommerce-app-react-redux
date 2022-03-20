@@ -1,11 +1,8 @@
-import { Container, Col, Row, Button } from "react-bootstrap";
-import { imagesMockList } from "../../data/imagesNewArrival";
-import { ProductItemTwo } from "../utils/ProductItemtwo";
-import { GetNewArrival } from "../../services/product.service";
+import { Container, Col, Row } from "react-bootstrap";
+import { NewArrivalItem } from "./NewArrivalItem";
+import { NewArrivalItemSmallScreen } from "./NewArrivalItemSmallScreen";
 import "./newArrival.css";
-import { useState, useEffect } from "react";
 export const NewArrival = (props) => {
-  const list = imagesMockList;
   return (
     <Container fluid className="newArrivalContainer mt-5">
       <Container>
@@ -16,9 +13,22 @@ export const NewArrival = (props) => {
           {props.newArrival &&
             props.newArrival.map((el, index) => {
               return (
-                <Col key={index} className="mb-4" md="2">
-                  <ProductItemTwo element={el} />
-                </Col>
+                <>
+                  <Col
+                    key={index}
+                    className="mb-4 d-none d-md-block d-lg-block"
+                    md="2"
+                  >
+                    <NewArrivalItem element={el} />
+                  </Col>
+                  <Col
+                    key={index}
+                    className="mb-4 d-block d-md-none d-lg-none"
+                    sm="12"
+                  >
+                    <NewArrivalItemSmallScreen element={el} />
+                  </Col>
+                </>
               );
             })}
         </Row>

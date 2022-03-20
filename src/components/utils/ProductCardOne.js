@@ -5,7 +5,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import ProductionQuantityLimitsIcon from "@mui/icons-material/ProductionQuantityLimits";
-export default function FeaturedItem(props) {
+export default function ProductCardOne(props) {
   const dummy = {
     id: 1,
     title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
@@ -20,44 +20,46 @@ export default function FeaturedItem(props) {
     },
   };
   const element = props.element || dummy;
+  const fullWidth = props.fullWidth;
   return (
-    <Card sx={{ maxWidth: 345, margin: "30px 0" }}>
+    <Card
+      sx={{
+        maxWidth: fullWidth ? "100%" : 320,
+        margin: "30px 0",
+        boxShadow: "none",
+        border: "1px solid #ededed",
+      }}
+    >
       <CardActionArea>
         <CardMedia
           component="img"
-          height="140"
+          height="300"
+          style={{ padding: "30px" }}
           image={element.image}
           alt="green iguana"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="body2">
             {element.title}
-          </Typography>
-          <Typography
-            gutterBottom
-            variant="span"
-            className="bg-warning"
-            color="text.primay"
-          >
-            {element.category}
-          </Typography>
-
-          <Typography
-            variant="body2"
-            color="text.primary"
-            style={{ fontWeight: "bold" }}
-          >
-            Price:
-          </Typography>
-          <Typography variant="h6" color="text.secondary">
-            {element.price}$
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions className="pt-2 pb-4">
-        <Button size="small" variant="contained" color="warning">
-          <ProductionQuantityLimitsIcon /> Add to cart
-        </Button>
+      <CardActions className="d-flex bg-blue">
+        <CardContent className="col-md-9 p-0">
+          <Typography
+            gutterBottom
+            variant="body2"
+            className="text-white"
+            style={{ fontWeight: "bold" }}
+          >
+            {element.price}$
+          </Typography>
+        </CardContent>
+        <CardContent className="col-md-3 p-0">
+          <Button size="small" variant="contained" color="warning">
+            <ProductionQuantityLimitsIcon />
+          </Button>
+        </CardContent>
       </CardActions>
     </Card>
   );

@@ -8,7 +8,7 @@ export const Footer = () => {
           <Col md="4">
             <Col>
               <h3>
-                Ecomm<span className="text-warning">Plateform</span>
+                Bi3<span className="text-orange">Li</span>
               </h3>
               <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting

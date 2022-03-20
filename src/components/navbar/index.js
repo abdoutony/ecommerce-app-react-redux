@@ -4,11 +4,15 @@ export const NavigationMenu = () => {
   return (
     <Navbar bg="dark" variant="dark" className="navigationBar">
       <Container>
-        <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+        <Navbar.Brand href="#home">
+          Bi3<span className="text-orange">Li</span>
+        </Navbar.Brand>
         <Nav className="me-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#features">Features</Nav.Link>
-          <Nav.Link href="#pricing">Pricing</Nav.Link>
+          <Nav.Link href="/">Home</Nav.Link>
+          <Nav.Link href="/products/men">Men</Nav.Link>
+          <Nav.Link href="/products/women">Women</Nav.Link>
+          <Nav.Link href="/products/electronics">Electronics</Nav.Link>
+          <Nav.Link href="/products/jewelery">Jewelery</Nav.Link>
         </Nav>
       </Container>
     </Navbar>

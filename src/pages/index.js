@@ -3,7 +3,7 @@ import { HeroSection } from "../components/hero/index";
 import Featured from "../components/featuredProducts";
 import { About } from "../components/about";
 import { Banner } from "../components/banner";
-import { NewsLetter } from "../components/newsLetter";
+//import { NewsLetter } from "../components/newsLetter";
 import { NewArrival } from "../components/newArrival";
 import { Footer } from "../components/footer";
 import { connect } from "react-redux";
@@ -21,8 +21,8 @@ const MainPage = (props) => {
       <About />
       <Featured featured={props.featured} />
       <Banner />
-      <NewArrival  newArrival={props.newArrival} />
-    
+      <NewArrival newArrival={props.newArrival} />
+
       <Footer />
     </>
   );

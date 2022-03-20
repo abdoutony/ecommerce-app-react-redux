@@ -2,6 +2,7 @@ const initialState = {
   products: [],
   featured: [],
   newArrival: [],
+  categories: [],
 };
 
 const ProductReducer = (state = initialState, action) => {
@@ -13,6 +14,11 @@ const ProductReducer = (state = initialState, action) => {
         products: payload.products,
         featured: payload.featured,
         newArrival: payload.newArrival,
+      };
+    case "FETCH_CATEGORIES":
+      return {
+        ...state,
+        categories: payload.categories,
       };
 
     default:

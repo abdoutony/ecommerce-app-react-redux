@@ -1,4 +1,5 @@
-import { Container, Col, Row, Button, Image } from "react-bootstrap";
+import { Container, Col, Row, Image } from "react-bootstrap";
+import { Button } from "@mui/material";
 import "./banner.css";
 import bannerImg from "../../multimedia/images/manmodelimg-removebg-preview.png";
 export const Banner = () => {
@@ -8,6 +9,7 @@ export const Banner = () => {
         <Row>
           <Col
             md="7"
+            sm="12"
             className="text-white d-flex align-items-center justify-content-center"
           >
             <Col>
@@ -18,11 +20,13 @@ export const Banner = () => {
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the 1500s
               </p>
-              <Button variant="warning">See all the offers</Button>
+              <Button variant="contained" color="warning">
+                See all the offers
+              </Button>
             </Col>
           </Col>
-          <Col md="5">
-            <Image src={bannerImg} />
+          <Col md="5" className="d-none d-md-block">
+            <Image src={bannerImg} width="400" />
           </Col>
         </Row>
       </Container>

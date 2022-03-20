@@ -6,10 +6,10 @@ export const About = () => {
     <Container className="mt-4 pt-4" fluid>
       <Container>
         <Row className="d-flex align-items-center">
-          <Col md="6">
+          <Col md="6" className="d-none d-md-block">
             <Image src={heroImg} width="400" />
           </Col>
-          <Col md="6">
+          <Col md="6" sm="12">
             <Col className="d-flex justify-content-start">
               <Col>
                 <h1 className="text-blue">About us</h1>

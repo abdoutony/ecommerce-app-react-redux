@@ -10,3 +10,15 @@
 .bg-blue {
   background-color: #000e1c !important;
 }
+
+.bg-gray {
+  background-color: #fafafa !important;
+}
+
+.text-orange {
+  color: #ed6c02 !important;
+}
+
+.bg-orange {
+  color: #ed6c02 !important;
+}
